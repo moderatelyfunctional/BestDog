@@ -10,7 +10,10 @@ import UIKit
 
 struct Colors {
     static let textColor = UIColor.white
-    static let background = UIColor(patternImage: UIImage(named: "ar_home_bg")!)
+    static let galaxyBackground = UIColor(patternImage: UIImage(named: "ar_home_bg")!)
+    static let purpleBackground = UIColor(red: 96.0/255, green: 94.0/255, blue: 149.0/255, alpha: 1.0)
+    static let pink = UIColor(red: 202.0/255, green: 96.0/255, blue: 122.0/255, alpha: 1.0)
+    static let darkerPink = UIColor(red: 178.0/255, green: 59.0/255, blue: 88.0/255, alpha: 1.0)
 }
 
 struct Dims {
@@ -22,3 +25,4 @@ struct Enter {
     static let GIFHeight = Dims.w * 0.65
     static let jumpOffset:CGFloat = (480/812) * Dims.h - GIFHeight * (42/193)
 }
+

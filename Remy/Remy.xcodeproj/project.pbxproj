@@ -22,8 +22,19 @@
 		DC1AC017235B7FBF00D73F72 /* RImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC016235B7FBF00D73F72 /* RImageView.swift */; };
 		DC1AC019235B81DA00D73F72 /* RGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC018235B81DA00D73F72 /* RGIF.swift */; };
 		DC1AC01B235B893C00D73F72 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC01A235B893C00D73F72 /* GIF.swift */; };
-		DC1AC01D235B8C8400D73F72 /* bunny-jump.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC01C235B8C8400D73F72 /* bunny-jump.gif */; };
+		DC1AC01D235B8C8400D73F72 /* bunny_jump.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC01C235B8C8400D73F72 /* bunny_jump.gif */; };
 		DC1AC01F235B934E00D73F72 /* EnterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC01E235B934E00D73F72 /* EnterButton.swift */; };
+		DC1AC021235B95BA00D73F72 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC020235B95BA00D73F72 /* PermissionViewController.swift */; };
+		DC1AC023235B96DE00D73F72 /* FullModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC022235B96DE00D73F72 /* FullModalViewController.swift */; };
+		DC1AC025235B9C3F00D73F72 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC024235B9C3F00D73F72 /* Container.swift */; };
+		DC1AC027235B9D7C00D73F72 /* PermissionsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC026235B9D7C00D73F72 /* PermissionsContainer.swift */; };
+		DC1AC029235BA1DB00D73F72 /* ConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC028235BA1DB00D73F72 /* ConfirmButton.swift */; };
+		DC1AC02B235BB41000D73F72 /* VizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC02A235BB41000D73F72 /* VizViewController.swift */; };
+		DC1AC02D235BB46A00D73F72 /* NavbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC02C235BB46A00D73F72 /* NavbarViewController.swift */; };
+		DC1AC02F235BB60200D73F72 /* DateCycler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC02E235BB60200D73F72 /* DateCycler.swift */; };
+		DC1AC031235BC62D00D73F72 /* GIFDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */; };
+		DC1AC033235BC6B500D73F72 /* bunny_sleep_please.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC032235BC6B500D73F72 /* bunny_sleep_please.gif */; };
+		DC1AC035235BC6CC00D73F72 /* bunny_walk.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC034235BC6CC00D73F72 /* bunny_walk.gif */; };
 		DC29CEDB235B72E80012F4AC /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDA235B72E80012F4AC /* EnterViewController.swift */; };
 		DC29CEDD235B76100012F4AC /* RConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDC235B76100012F4AC /* RConstraints.swift */; };
 		DC29CEDF235B76EA0012F4AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDE235B76EA0012F4AC /* Constants.swift */; };
@@ -49,8 +60,19 @@
 		DC1AC016235B7FBF00D73F72 /* RImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RImageView.swift; sourceTree = "<group>"; };
 		DC1AC018235B81DA00D73F72 /* RGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGIF.swift; sourceTree = "<group>"; };
 		DC1AC01A235B893C00D73F72 /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GIF.swift; path = Remy/GIF.swift; sourceTree = SOURCE_ROOT; };
-		DC1AC01C235B8C8400D73F72 /* bunny-jump.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "bunny-jump.gif"; sourceTree = "<group>"; };
+		DC1AC01C235B8C8400D73F72 /* bunny_jump.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bunny_jump.gif; sourceTree = "<group>"; };
 		DC1AC01E235B934E00D73F72 /* EnterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterButton.swift; sourceTree = "<group>"; };
+		DC1AC020235B95BA00D73F72 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		DC1AC022235B96DE00D73F72 /* FullModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullModalViewController.swift; sourceTree = "<group>"; };
+		DC1AC024235B9C3F00D73F72 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		DC1AC026235B9D7C00D73F72 /* PermissionsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsContainer.swift; sourceTree = "<group>"; };
+		DC1AC028235BA1DB00D73F72 /* ConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmButton.swift; sourceTree = "<group>"; };
+		DC1AC02A235BB41000D73F72 /* VizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VizViewController.swift; sourceTree = "<group>"; };
+		DC1AC02C235BB46A00D73F72 /* NavbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarViewController.swift; sourceTree = "<group>"; };
+		DC1AC02E235BB60200D73F72 /* DateCycler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCycler.swift; sourceTree = "<group>"; };
+		DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFDescriptor.swift; sourceTree = "<group>"; };
+		DC1AC032235BC6B500D73F72 /* bunny_sleep_please.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bunny_sleep_please.gif; sourceTree = "<group>"; };
+		DC1AC034235BC6CC00D73F72 /* bunny_walk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bunny_walk.gif; sourceTree = "<group>"; };
 		DC29CEDA235B72E80012F4AC /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		DC29CEDC235B76100012F4AC /* RConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RConstraints.swift; sourceTree = "<group>"; };
 		DC29CEDE235B76EA0012F4AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -96,7 +118,9 @@
 				DC1AC007235B797300D73F72 /* Fonts */,
 				DC29CEE1235B77660012F4AC /* Components */,
 				DC29CEE0235B77620012F4AC /* ViewControllers */,
-				DC1AC01C235B8C8400D73F72 /* bunny-jump.gif */,
+				DC1AC01C235B8C8400D73F72 /* bunny_jump.gif */,
+				DC1AC034235BC6CC00D73F72 /* bunny_walk.gif */,
+				DC1AC032235BC6B500D73F72 /* bunny_sleep_please.gif */,
 				DC0074BE235AE28F005E5AF1 /* art.scnassets */,
 				DC0074C5235AE291005E5AF1 /* Assets.xcassets */,
 				DC0074C7235AE291005E5AF1 /* LaunchScreen.storyboard */,
@@ -122,6 +146,10 @@
 		DC29CEE0235B77620012F4AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC1AC02A235BB41000D73F72 /* VizViewController.swift */,
+				DC1AC02C235BB46A00D73F72 /* NavbarViewController.swift */,
+				DC1AC022235B96DE00D73F72 /* FullModalViewController.swift */,
+				DC1AC020235B95BA00D73F72 /* PermissionViewController.swift */,
 				DC0074C0235AE28F005E5AF1 /* MainViewController.swift */,
 				DC29CEDA235B72E80012F4AC /* EnterViewController.swift */,
 			);
@@ -131,6 +159,11 @@
 		DC29CEE1235B77660012F4AC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */,
+				DC1AC02E235BB60200D73F72 /* DateCycler.swift */,
+				DC1AC028235BA1DB00D73F72 /* ConfirmButton.swift */,
+				DC1AC026235B9D7C00D73F72 /* PermissionsContainer.swift */,
+				DC1AC024235B9C3F00D73F72 /* Container.swift */,
 				DC1AC01E235B934E00D73F72 /* EnterButton.swift */,
 				DC1AC016235B7FBF00D73F72 /* RImageView.swift */,
 				DC29CEE2235B777F0012F4AC /* RLabel.swift */,
@@ -198,10 +231,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0074BF235AE28F005E5AF1 /* art.scnassets in Resources */,
-				DC1AC01D235B8C8400D73F72 /* bunny-jump.gif in Resources */,
+				DC1AC01D235B8C8400D73F72 /* bunny_jump.gif in Resources */,
 				DC0074C9235AE291005E5AF1 /* LaunchScreen.storyboard in Resources */,
+				DC1AC033235BC6B500D73F72 /* bunny_sleep_please.gif in Resources */,
 				DC1AC013235B799400D73F72 /* Quicksand-Light.otf in Resources */,
 				DC1AC011235B798F00D73F72 /* Quicksand-BoldItalic.otf in Resources */,
+				DC1AC035235BC6CC00D73F72 /* bunny_walk.gif in Resources */,
 				DC1AC015235B799900D73F72 /* Quicksand-Regular.otf in Resources */,
 				DC0074C6235AE291005E5AF1 /* Assets.xcassets in Resources */,
 				DC1AC00F235B798900D73F72 /* Quicksand_Dash.otf in Resources */,
@@ -218,15 +253,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1AC02D235BB46A00D73F72 /* NavbarViewController.swift in Sources */,
 				DC1AC01B235B893C00D73F72 /* GIF.swift in Sources */,
+				DC1AC02B235BB41000D73F72 /* VizViewController.swift in Sources */,
+				DC1AC021235B95BA00D73F72 /* PermissionViewController.swift in Sources */,
 				DC29CEE3235B777F0012F4AC /* RLabel.swift in Sources */,
 				DC29CEDB235B72E80012F4AC /* EnterViewController.swift in Sources */,
 				DC0074C1235AE28F005E5AF1 /* MainViewController.swift in Sources */,
+				DC1AC027235B9D7C00D73F72 /* PermissionsContainer.swift in Sources */,
 				DC1AC01F235B934E00D73F72 /* EnterButton.swift in Sources */,
 				DC1AC017235B7FBF00D73F72 /* RImageView.swift in Sources */,
+				DC1AC02F235BB60200D73F72 /* DateCycler.swift in Sources */,
+				DC1AC029235BA1DB00D73F72 /* ConfirmButton.swift in Sources */,
 				DC0074BD235AE28F005E5AF1 /* AppDelegate.swift in Sources */,
+				DC1AC023235B96DE00D73F72 /* FullModalViewController.swift in Sources */,
 				DC1AC019235B81DA00D73F72 /* RGIF.swift in Sources */,
+				DC1AC031235BC62D00D73F72 /* GIFDescriptor.swift in Sources */,
 				DC29CEDD235B76100012F4AC /* RConstraints.swift in Sources */,
+				DC1AC025235B9C3F00D73F72 /* Container.swift in Sources */,
 				DCF86A9B235B6E270042DE7F /* AR.swift in Sources */,
 				DC29CEDF235B76EA0012F4AC /* Constants.swift in Sources */,
 			);

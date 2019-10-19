@@ -18,7 +18,7 @@ class EnterViewController: UIViewController {
         text: "Enter",
         font: UIFont(name: "Quicksand-Regular", size: 24)!)
     let planetView = RImageView(name: "ar_home_planet")
-    let bunnyGIF = RGIF(name: "bunny-jump")
+    let bunnyGIF = RGIF(name: "bunny_jump")
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -31,7 +31,9 @@ class EnterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Colors.background
+        self.view.backgroundColor = Colors.galaxyBackground
+        
+        self.enterButton.addTarget(self, action: #selector(EnterViewController.presentPermissions), for: .touchUpInside)
                 
         self.view.addSubview(self.planetView)
         self.view.addSubview(self.bunnyGIF)
@@ -52,10 +54,15 @@ class EnterViewController: UIViewController {
         self.view.addConstraint(RConstraint.paddingPositionConstraint(view: self.helloText, side: .left, padding: 40))
         
         self.view.addConstraint(RConstraint.equalConstraint(firstView: self.view, secondView: self.enterButton, attribute: .centerX))
-        self.view.addConstraint(RConstraint.verticalSpacingConstraint(upperView: self.enterButton, lowerView: self.enter, spacing: 20))
-        self.view.addConstraints(RConstraint.squareWidthConstraints(view: self.enterButton, squareRatio: 0.2))
+        self.view.addConstraint(RConstraint.verticalSpacingConstraint(upperView: self.enterButton, lowerView: self.enter, spacing: 5))
+        self.view.addConstraints(RConstraint.squareWidthConstraints(view: self.enterButton, squareRatio: 0.15))
         
         self.view.addConstraints(RConstraint.paddingPositionConstraints(view: self.enter, sides: [.left, .bottom, .right], padding: 20))
+    }
+    
+    @objc func presentPermissions() {
+        let permissionsVC = PermissionsViewController()
+        self.present(permissionsVC, animated: true, completion: nil)
     }
     
 }
