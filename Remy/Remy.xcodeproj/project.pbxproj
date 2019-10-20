@@ -41,6 +41,8 @@
 		DC29CEDF235B76EA0012F4AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDE235B76EA0012F4AC /* Constants.swift */; };
 		DC29CEE3235B777F0012F4AC /* RLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEE2235B777F0012F4AC /* RLabel.swift */; };
 		DC452D11235C4B4300FC1749 /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC452D10235C4B4300FC1749 /* CounterButton.swift */; };
+		DC452D13235C521900FC1749 /* AnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC452D12235C521900FC1749 /* AnimationOptions.swift */; };
+		DC452D15235C59AE00FC1749 /* SelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC452D14235C59AE00FC1749 /* SelectionButton.swift */; };
 		DCF86A9B235B6E270042DE7F /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF86A9A235B6E270042DE7F /* AR.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		DC29CEDE235B76EA0012F4AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC29CEE2235B777F0012F4AC /* RLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLabel.swift; sourceTree = "<group>"; };
 		DC452D10235C4B4300FC1749 /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
+		DC452D12235C521900FC1749 /* AnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationOptions.swift; sourceTree = "<group>"; };
+		DC452D14235C59AE00FC1749 /* SelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionButton.swift; sourceTree = "<group>"; };
 		DCF86A9A235B6E270042DE7F /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,8 +167,10 @@
 		DC29CEE1235B77660012F4AC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DC452D12235C521900FC1749 /* AnimationOptions.swift */,
 				DC452D10235C4B4300FC1749 /* CounterButton.swift */,
 				DC1AC036235BD8F500D73F72 /* DescLabel.swift */,
+				DC452D14235C59AE00FC1749 /* SelectionButton.swift */,
 				DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */,
 				DC1AC02E235BB60200D73F72 /* DateCycler.swift */,
 				DC1AC028235BA1DB00D73F72 /* ConfirmButton.swift */,
@@ -261,8 +267,10 @@
 			files = (
 				DC1AC02D235BB46A00D73F72 /* NavbarViewController.swift in Sources */,
 				DC1AC01B235B893C00D73F72 /* GIF.swift in Sources */,
+				DC452D15235C59AE00FC1749 /* SelectionButton.swift in Sources */,
 				DC1AC02B235BB41000D73F72 /* VizViewController.swift in Sources */,
 				DC1AC021235B95BA00D73F72 /* PermissionViewController.swift in Sources */,
+				DC452D13235C521900FC1749 /* AnimationOptions.swift in Sources */,
 				DC29CEE3235B777F0012F4AC /* RLabel.swift in Sources */,
 				DC29CEDB235B72E80012F4AC /* EnterViewController.swift in Sources */,
 				DC0074C1235AE28F005E5AF1 /* ARViewController.swift in Sources */,

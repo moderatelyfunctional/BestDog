@@ -14,7 +14,10 @@ class ARViewController: UIViewController {
     
     let sceneView:ARSCNView
     var currBunny:SCNNode!
+    
     var animations = [String:CAAnimation]()
+    let animationsMap = ["W": "walking.scn"]
+    let animationOptions = AnimationOptions()
     
     var timerCounter = 0
     let timerText = RLabel(text: "00:00", font: UIFont(name: "Quicksand-Bold", size: 16)!)
@@ -43,24 +46,28 @@ class ARViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ARViewController.updateTimerText), userInfo: nil, repeats: true)
         
         self.confirmButton.addTarget(self, action: #selector(ARViewController.dismissVC), for: .touchUpInside)
+        for button in self.animationOptions.buttons {
+            button.addTarget(self, action: #selector(ARViewController.setAnimation), for: .touchUpInside)
+        }
         
         sceneView.delegate = self
         sceneView.showsStatistics = true
         sceneView.debugOptions = .showFeaturePoints
+        sceneView.preferredFramesPerSecond = 60
         
-        self.view.backgroundColor = UIColor.green
-        
+        sceneView.scene.rootNode.addChildNode(self.currBunny)
+        self.view.addSubview(self.sceneView)
+
+        self.view.addSubview(self.animationOptions)
         self.view.addSubview(self.confirmButton)
         self.view.addSubview(self.timerText)
         addConstraints()
-        
-//        sceneView.scene.rootNode.addChildNode(self.currBunny)
-//        self.view.addSubview(self.sceneView)
-        
 //        loadAnimations()
     }
     
     func addConstraints() {
+        self.view.addConstraints(RConstraint.paddingPositionConstraints(view: self.animationOptions, sides: [.top, .right], padding: 25))
+        
         self.view.addConstraints(RConstraint.paddingPositionConstraints(view: self.confirmButton, sides: [.left, .bottom, .right], padding: 25))
         self.view.addConstraint(RConstraint.fillYConstraints(view: self.confirmButton, heightRatio: 0.075))
         
@@ -80,6 +87,42 @@ class ARViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func setAnimation(sender: UIView) {
+        let sender = sender as! SelectionButton
+        let text = sender.titleLabel!.text!
+        
+        self.animationOptions.setSelected(sender: sender)
+
+        self.currBunny.removeFromParentNode()
+        
+        if text == "2D" {
+            _setup2DNode()
+        } else {
+            _setup3DAnimation(animationKey: text)
+        }
+        
+        sceneView.scene.rootNode.addChildNode(self.currBunny)
+    }
+    
+    func _setup2DNode() {
+        let bunnyScene = SCNScene(named: "art.scnassets/bunny.scn")
+        
+        self.currBunny = bunnyScene!.rootNode.childNode(withName: "bunny", recursively: false)
+        self.currBunny.scale = SCNVector3(x: 0.1, y: 0.1, z: 0.1)
+        self.currBunny.position = SCNVector3(0, 0, 10)
+        
+    }
+
+    func _setup3DAnimation(animationKey: String) {
+        let scene = SCNScene(named: "art.scnassets/\(animationsMap[animationKey] ?? "W")")
+        self.currBunny = SCNNode()
+        for child in (scene?.rootNode.childNodes)! {
+            self.currBunny.addChildNode(child)
+        }
+        self.currBunny.scale = SCNVector3(0.1, 0.1, 0.1)
+        self.currBunny.position = SCNVector3(0, 0, 10)
+    }
+    
     func loadAnimations() {
         let walkingScene = SCNScene(named: "art.scnassets/walking.scn")
         
@@ -95,10 +138,10 @@ class ARViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        let configuration = ARWorldTrackingConfiguration()
-//        configuration.planeDetection = .horizontal
-//
-//        sceneView.session.run(configuration)
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+
+        sceneView.session.run(configuration)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -124,44 +167,44 @@ extension ARViewController: ARSCNViewDelegate {
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-//
-//        let width = CGFloat(planeAnchor.extent.x)
-//        let height = CGFloat(planeAnchor.extent.z)
-//        let plane = SCNPlane(width: width, height: height)
-//
-//        plane.materials.first?.diffuse.contents = Colors.clear
-//
-//        let planeNode = SCNNode(geometry: plane)
-//
-//        let x = CGFloat(planeAnchor.center.x)
-//        let y = CGFloat(planeAnchor.center.y)
-//        let z = CGFloat(planeAnchor.center.z)
-//        planeNode.position = SCNVector3(x,y,z)
-//        planeNode.eulerAngles.x = -.pi / 2
-//
-//        node.addChildNode(planeNode)
-//
-//        _updateBunny(rootNode: node, planeNode: planeNode)
+        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+
+        let width = CGFloat(planeAnchor.extent.x)
+        let height = CGFloat(planeAnchor.extent.z)
+        let plane = SCNPlane(width: width, height: height)
+
+        plane.materials.first?.diffuse.contents = Colors.clear
+
+        let planeNode = SCNNode(geometry: plane)
+
+        let x = CGFloat(planeAnchor.center.x)
+        let y = CGFloat(planeAnchor.center.y)
+        let z = CGFloat(planeAnchor.center.z)
+        planeNode.position = SCNVector3(x,y,z)
+        planeNode.eulerAngles.x = -.pi / 2
+
+        node.addChildNode(planeNode)
+
+        _updateBunny(rootNode: node, planeNode: planeNode)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-//        guard let planeAnchor = anchor as?  ARPlaneAnchor,
-//            let planeNode = node.childNodes.first,
-//            let plane = planeNode.geometry as? SCNPlane
-//            else { return }
-//
-//        let width = CGFloat(planeAnchor.extent.x)
-//        let height = CGFloat(planeAnchor.extent.z)
-//        plane.width = width
-//        plane.height = height
-//
-//        let x = CGFloat(planeAnchor.center.x)
-//        let y = CGFloat(planeAnchor.center.y)
-//        let z = CGFloat(planeAnchor.center.z)
-//        planeNode.position = SCNVector3(x, y, z)
-//
-//        _updateBunny(rootNode: node, planeNode: planeNode)
+        guard let planeAnchor = anchor as?  ARPlaneAnchor,
+            let planeNode = node.childNodes.first,
+            let plane = planeNode.geometry as? SCNPlane
+            else { return }
+
+        let width = CGFloat(planeAnchor.extent.x)
+        let height = CGFloat(planeAnchor.extent.z)
+        plane.width = width
+        plane.height = height
+
+        let x = CGFloat(planeAnchor.center.x)
+        let y = CGFloat(planeAnchor.center.y)
+        let z = CGFloat(planeAnchor.center.z)
+        planeNode.position = SCNVector3(x, y, z)
+
+        _updateBunny(rootNode: node, planeNode: planeNode)
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
