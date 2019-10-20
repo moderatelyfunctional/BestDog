@@ -16,7 +16,12 @@ class ARViewController: UIViewController {
     var currBunny:SCNNode!
     
     var animations = [String:CAAnimation]()
-    let animationsMap = ["W": "walking.scn"]
+    let animationsMap = [
+        "W": "walking.scn",
+        "S": "seizure.scn",
+        "J": "jump.scn",
+        "C": "chicken.scn"
+    ]
     let animationOptions = AnimationOptions()
     
     var timerCounter = 0
