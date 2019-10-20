@@ -28,3 +28,7 @@ struct Enter {
     static let jumpOffset:CGFloat = (480/812) * Dims.h - GIFHeight * (42/193)
 }
 
+struct ARView {
+    static var minutesSpent = 3
+}
+

@@ -41,6 +41,10 @@ class VizViewController: NavbarViewController {
         addConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.walkContainer.descriptor.setText(whiteText: "Walked for", cyanText: "\(ARView.minutesSpent) minutes")
+    }
+    
     func addConstraints() {
         self.view.addConstraint(RConstraint.paddingPositionConstraint(view: self.dateCycler, side: .top, padding: 64))
         self.view.addConstraint(RConstraint.equalConstraint(firstView: self.view, secondView: self.dateCycler, attribute: .centerX))

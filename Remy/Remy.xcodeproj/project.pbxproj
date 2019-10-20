@@ -40,6 +40,7 @@
 		DC29CEDD235B76100012F4AC /* RConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDC235B76100012F4AC /* RConstraints.swift */; };
 		DC29CEDF235B76EA0012F4AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDE235B76EA0012F4AC /* Constants.swift */; };
 		DC29CEE3235B777F0012F4AC /* RLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEE2235B777F0012F4AC /* RLabel.swift */; };
+		DC452D11235C4B4300FC1749 /* CounterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC452D10235C4B4300FC1749 /* CounterButton.swift */; };
 		DCF86A9B235B6E270042DE7F /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF86A9A235B6E270042DE7F /* AR.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		DC29CEDC235B76100012F4AC /* RConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RConstraints.swift; sourceTree = "<group>"; };
 		DC29CEDE235B76EA0012F4AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC29CEE2235B777F0012F4AC /* RLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLabel.swift; sourceTree = "<group>"; };
+		DC452D10235C4B4300FC1749 /* CounterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterButton.swift; sourceTree = "<group>"; };
 		DCF86A9A235B6E270042DE7F /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 		DC29CEE1235B77660012F4AC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DC452D10235C4B4300FC1749 /* CounterButton.swift */,
 				DC1AC036235BD8F500D73F72 /* DescLabel.swift */,
 				DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */,
 				DC1AC02E235BB60200D73F72 /* DateCycler.swift */,
@@ -266,6 +269,7 @@
 				DC1AC027235B9D7C00D73F72 /* PermissionsContainer.swift in Sources */,
 				DC1AC01F235B934E00D73F72 /* EnterButton.swift in Sources */,
 				DC1AC037235BD8F500D73F72 /* DescLabel.swift in Sources */,
+				DC452D11235C4B4300FC1749 /* CounterButton.swift in Sources */,
 				DC1AC017235B7FBF00D73F72 /* RImageView.swift in Sources */,
 				DC1AC02F235BB60200D73F72 /* DateCycler.swift in Sources */,
 				DC1AC029235BA1DB00D73F72 /* ConfirmButton.swift in Sources */,
