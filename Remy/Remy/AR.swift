@@ -10,8 +10,7 @@ import ARKit
 
 func createARNode(name: String, path: String, eX: CGFloat, eY: CGFloat, eZ: CGFloat) -> SCNNode {
     let scene = SCNScene(named: path)!
-    let currNode = scene.rootNode.childNode(withName: "bunny", recursively: false)!
-    currNode.position = SCNVector3(0, 0, 0)
+    let currNode = scene.rootNode.childNode(withName: name, recursively: false)!
     currNode.eulerAngles = SCNVector3(eX, eY, eZ)
     
     return currNode

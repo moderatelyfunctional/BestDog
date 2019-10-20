@@ -14,6 +14,8 @@ struct Colors {
     static let purpleBackground = UIColor(red: 96.0/255, green: 94.0/255, blue: 149.0/255, alpha: 1.0)
     static let pink = UIColor(red: 202.0/255, green: 96.0/255, blue: 122.0/255, alpha: 1.0)
     static let darkerPink = UIColor(red: 178.0/255, green: 59.0/255, blue: 88.0/255, alpha: 1.0)
+    static let cyan = UIColor(red: 113.0/255, green: 241.0/255, blue: 228.0/255, alpha: 1.0)
+    static let clear = UIColor.clear
 }
 
 struct Dims {

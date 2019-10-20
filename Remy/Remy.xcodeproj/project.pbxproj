@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC0074BD235AE28F005E5AF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0074BC235AE28F005E5AF1 /* AppDelegate.swift */; };
 		DC0074BF235AE28F005E5AF1 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0074BE235AE28F005E5AF1 /* art.scnassets */; };
-		DC0074C1235AE28F005E5AF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0074C0235AE28F005E5AF1 /* MainViewController.swift */; };
+		DC0074C1235AE28F005E5AF1 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0074C0235AE28F005E5AF1 /* ARViewController.swift */; };
 		DC0074C6235AE291005E5AF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0074C5235AE291005E5AF1 /* Assets.xcassets */; };
 		DC0074C9235AE291005E5AF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0074C7235AE291005E5AF1 /* LaunchScreen.storyboard */; };
 		DC1AC00F235B798900D73F72 /* Quicksand_Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC00D235B798400D73F72 /* Quicksand_Dash.otf */; };
@@ -35,6 +35,7 @@
 		DC1AC031235BC62D00D73F72 /* GIFDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */; };
 		DC1AC033235BC6B500D73F72 /* bunny_sleep_please.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC032235BC6B500D73F72 /* bunny_sleep_please.gif */; };
 		DC1AC035235BC6CC00D73F72 /* bunny_walk.gif in Resources */ = {isa = PBXBuildFile; fileRef = DC1AC034235BC6CC00D73F72 /* bunny_walk.gif */; };
+		DC1AC037235BD8F500D73F72 /* DescLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AC036235BD8F500D73F72 /* DescLabel.swift */; };
 		DC29CEDB235B72E80012F4AC /* EnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDA235B72E80012F4AC /* EnterViewController.swift */; };
 		DC29CEDD235B76100012F4AC /* RConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDC235B76100012F4AC /* RConstraints.swift */; };
 		DC29CEDF235B76EA0012F4AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC29CEDE235B76EA0012F4AC /* Constants.swift */; };
@@ -46,7 +47,7 @@
 		DC0074B9235AE28F005E5AF1 /* Remy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Remy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC0074BC235AE28F005E5AF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC0074BE235AE28F005E5AF1 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		DC0074C0235AE28F005E5AF1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DC0074C0235AE28F005E5AF1 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		DC0074C5235AE291005E5AF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC0074C8235AE291005E5AF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC0074CA235AE291005E5AF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFDescriptor.swift; sourceTree = "<group>"; };
 		DC1AC032235BC6B500D73F72 /* bunny_sleep_please.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bunny_sleep_please.gif; sourceTree = "<group>"; };
 		DC1AC034235BC6CC00D73F72 /* bunny_walk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bunny_walk.gif; sourceTree = "<group>"; };
+		DC1AC036235BD8F500D73F72 /* DescLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescLabel.swift; sourceTree = "<group>"; };
 		DC29CEDA235B72E80012F4AC /* EnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterViewController.swift; sourceTree = "<group>"; };
 		DC29CEDC235B76100012F4AC /* RConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RConstraints.swift; sourceTree = "<group>"; };
 		DC29CEDE235B76EA0012F4AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 				DC1AC02C235BB46A00D73F72 /* NavbarViewController.swift */,
 				DC1AC022235B96DE00D73F72 /* FullModalViewController.swift */,
 				DC1AC020235B95BA00D73F72 /* PermissionViewController.swift */,
-				DC0074C0235AE28F005E5AF1 /* MainViewController.swift */,
+				DC0074C0235AE28F005E5AF1 /* ARViewController.swift */,
 				DC29CEDA235B72E80012F4AC /* EnterViewController.swift */,
 			);
 			path = ViewControllers;
@@ -159,6 +161,7 @@
 		DC29CEE1235B77660012F4AC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DC1AC036235BD8F500D73F72 /* DescLabel.swift */,
 				DC1AC030235BC62D00D73F72 /* GIFDescriptor.swift */,
 				DC1AC02E235BB60200D73F72 /* DateCycler.swift */,
 				DC1AC028235BA1DB00D73F72 /* ConfirmButton.swift */,
@@ -259,9 +262,10 @@
 				DC1AC021235B95BA00D73F72 /* PermissionViewController.swift in Sources */,
 				DC29CEE3235B777F0012F4AC /* RLabel.swift in Sources */,
 				DC29CEDB235B72E80012F4AC /* EnterViewController.swift in Sources */,
-				DC0074C1235AE28F005E5AF1 /* MainViewController.swift in Sources */,
+				DC0074C1235AE28F005E5AF1 /* ARViewController.swift in Sources */,
 				DC1AC027235B9D7C00D73F72 /* PermissionsContainer.swift in Sources */,
 				DC1AC01F235B934E00D73F72 /* EnterButton.swift in Sources */,
+				DC1AC037235BD8F500D73F72 /* DescLabel.swift in Sources */,
 				DC1AC017235B7FBF00D73F72 /* RImageView.swift in Sources */,
 				DC1AC02F235BB60200D73F72 /* DateCycler.swift in Sources */,
 				DC1AC029235BA1DB00D73F72 /* ConfirmButton.swift in Sources */,

@@ -10,14 +10,14 @@ import UIKit
 
 class ConfirmButton: UIButton {
     
-    init() {
+    init(text: String) {
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.backgroundColor = Colors.pink
         self.contentEdgeInsets = UIEdgeInsets(top: 16.0, left: 20.0, bottom: 16.0, right: 20.0)
-        self.setTitle("Got It!", for: .normal)
+        self.setTitle(text, for: .normal)
         self.titleLabel!.font = UIFont(name: "Quicksand-Bold", size: 16)!
     }
     

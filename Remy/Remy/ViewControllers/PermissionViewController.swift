@@ -15,7 +15,7 @@ class PermissionsViewController: FullModalViewController {
         text: "Remy requires data from the following applications",
         font: UIFont(name: "Quicksand-Bold", size: 24)!)
     let externalPermissions = PermissionsContainer()
-    let confirmButton = ConfirmButton()
+    let confirmButton = ConfirmButton(text: "Got It!")
     
     override init() {
         super.init()
