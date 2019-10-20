@@ -14,8 +14,15 @@ class ARViewController: UIViewController {
     
     let sceneView:ARSCNView
     var currBunny:SCNNode!
+    var animations = [String:CAAnimation]()
     
     init() {
+        let bunnyScene = SCNScene(named: "art.scnassets/bunny.scn")
+        self.currBunny = bunnyScene!.rootNode.childNode(withName: "bunny", recursively: false)
+        self.currBunny.scale = SCNVector3(x: 0.1, y: 0.1, z: 0.1)
+        self.currBunny.position = SCNVector3(0, 0, 10)
+//        self.currBunny.isHidden = true)
+        
         self.sceneView = ARSCNView(frame: UIScreen.main.bounds)
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,6 +39,22 @@ class ARViewController: UIViewController {
         sceneView.debugOptions = .showFeaturePoints
                 
         self.view.addSubview(self.sceneView)
+        
+        sceneView.scene.rootNode.addChildNode(self.currBunny)
+//        loadAnimations()
+    }
+    
+    func loadAnimations() {
+        let walkingScene = SCNScene(named: "art.scnassets/walking.scn")
+        
+        let node = SCNNode()
+        for child in (walkingScene?.rootNode.childNodes)! {
+            node.addChildNode(child)
+        }
+        node.position = SCNVector3(0, -1, -2)
+        node.scale = SCNVector3(0.2, 0.2, 0.2)
+        
+        sceneView.scene.rootNode.addChildNode(node)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,31 +77,19 @@ class ARViewController: UIViewController {
 }
 
 extension ARViewController: ARSCNViewDelegate {
-    
+  
     func _updateBunny(rootNode: SCNNode, planeNode: SCNNode) {
-        if let bunny = self.currBunny {
-            // does not handle occlusion
-            let isVisible = sceneView.isNode(bunny.presentation, insideFrustumOf: sceneView.pointOfView!.presentation)
-            if isVisible {
-                return
-            }
+        // does not handle occlusion
+        let isVisible = sceneView.isNode(self.currBunny.presentation, insideFrustumOf: sceneView.pointOfView!.presentation)
+        if isVisible {
+            return
         }
         
-        guard let bunnyScene = SCNScene(named: "art.scnassets/bunny.scn"),
-              let bunnyNode = bunnyScene.rootNode.childNode(withName: "bunny", recursively: false)
-        else { return }
-        
-        bunnyNode.position = planeNode.position
-        bunnyNode.scale = SCNVector3(x: 0.1, y: 0.1, z: 0.1)
-        
-        if let bunny = self.currBunny {
-            bunny.removeFromParentNode()
-        }
-        
-        self.currBunny = bunnyNode
-        rootNode.addChildNode(bunnyNode)
+        self.currBunny.position = planeNode.position
+        self.currBunny.removeFromParentNode()
+        rootNode.addChildNode(self.currBunny)
     }
-    
+
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
