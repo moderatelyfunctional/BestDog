@@ -55,6 +55,30 @@ class ARViewController: UIViewController {
 
 extension ARViewController: ARSCNViewDelegate {
     
+    func _updateBunny(rootNode: SCNNode, planeNode: SCNNode) {
+        if let bunny = self.currBunny {
+            // does not handle occlusion
+            let isVisible = sceneView.isNode(bunny.presentation, insideFrustumOf: sceneView.pointOfView!.presentation)
+            if isVisible {
+                return
+            }
+        }
+        
+        guard let bunnyScene = SCNScene(named: "art.scnassets/bunny.scn"),
+              let bunnyNode = bunnyScene.rootNode.childNode(withName: "bunny", recursively: false)
+        else { return }
+        
+        bunnyNode.position = planeNode.position
+        bunnyNode.scale = SCNVector3(x: 0.1, y: 0.1, z: 0.1)
+        
+        if let bunny = self.currBunny {
+            bunny.removeFromParentNode()
+        }
+        
+        self.currBunny = bunnyNode
+        rootNode.addChildNode(bunnyNode)
+    }
+    
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
         
@@ -73,20 +97,8 @@ extension ARViewController: ARSCNViewDelegate {
         planeNode.eulerAngles.x = -.pi / 2
         
         node.addChildNode(planeNode)
-        
-        guard let bunnyScene = SCNScene(named: "art.scnassets/bunny.scn"),
-              let bunnyNode = bunnyScene.rootNode.childNode(withName: "bunny", recursively: false)
-        else { return }
-        
-        bunnyNode.position = planeNode.position
-        bunnyNode.scale = SCNVector3(x: 0.1, y: 0.1, z: 0.1)
-        
-//        let billboardConstraint = SCNBillboardConstraint()
-//        billboardConstraint.freeAxes = [.X]
-//        bunnyNode.constraints = [billboardConstraint]
-        
-        node.addChildNode(bunnyNode)
-        
+
+        _updateBunny(rootNode: node, planeNode: planeNode)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
@@ -104,14 +116,8 @@ extension ARViewController: ARSCNViewDelegate {
         let y = CGFloat(planeAnchor.center.y)
         let z = CGFloat(planeAnchor.center.z)
         planeNode.position = SCNVector3(x, y, z)
-//
-//        guard let bunnyScene = SCNScene(named: "bunny.scn"),
-//              let bunnyNode = bunnyScene.rootNode.childNode(withName: "bunny", recursively: false)
-//        else { return }
-//
-//        bunnyNode.position = planeNode.position
-//        node.addChildNode(bunnyNode)
-
+        
+        _updateBunny(rootNode: node, planeNode: planeNode)
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
